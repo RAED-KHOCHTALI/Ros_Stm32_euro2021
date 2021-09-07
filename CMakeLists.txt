@@ -207,12 +207,15 @@ include_directories(
 # endif()
 add_executable(ta7wil src/ta7wil.cpp)
 add_executable(goal src/goal.cpp)
+add_executable(send_goal scripts/send_goal.py)
 target_link_libraries(ta7wil ${catkin_LIBRARIES}
 )
 
 target_link_libraries(goal ${catkin_LIBRARIES}
 )
 
+target_link_libraries(send_goal ${catkin_LIBRARIES}
+)
 
 
 ## Add folders to be run by python nosetests

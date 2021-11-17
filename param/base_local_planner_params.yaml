@@ -1,0 +1,24 @@
+
+base_local_planner : base_local_planner/TrajectoryPlannerROS
+TrajectoryPlannerROS:
+
+# Robot Configuration Parameters
+
+  max_vel_x: 0.4 
+  min_vel_x: 0
+
+  max_vel_theta:  0.7
+  min_vel_theta: -0.7
+  min_in_place_vel_theta: 0.7
+
+  acc_lim_x: 0.3
+  acc_lim_y: 0.0
+  acc_lim_theta: 0.5
+
+# Goal Tolerance Parameters
+  xy_goal_tolerance: 0.10
+  yaw_goal_tolerance: 0.08
+
+# Differential-drive robot configuration
+  holonomic_robot: false
+  meter_scoring: true

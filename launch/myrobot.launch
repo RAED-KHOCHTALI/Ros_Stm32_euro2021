@@ -1,0 +1,20 @@
+<launch>
+    <node name="serial_node"        pkg="rosserial_python"      type="serial_node.py">
+    <param name="port"              type="string"               value="/dev/ttyACM0"/>
+    <param name="baud"              type="int"                  value="256000"/>
+    </node>
+    	<node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+      args="0 0 0 0 0 0 map odom 100"/>
+
+    <!-- Map File -->
+  <arg name="map_file" default="$(find stm_communication)/maps/mapjdida.yaml"/>
+  
+  <!-- Map Server -->
+  <!-- Publish: /map, /map_metadata -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" />
+
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find stm_communication)/rviz/rviz_config_file.rviz" />
+    
+    
+</launch>

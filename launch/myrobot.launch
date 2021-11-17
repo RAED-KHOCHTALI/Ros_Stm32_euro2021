@@ -7,14 +7,14 @@
       args="0 0 0 0 0 0 map odom 100"/>
 
     <!-- Map File -->
-  <arg name="map_file" default="$(find stm_communication)/maps/mapjdida.yaml"/>
+  <arg name="map_file" default="$(find reel_euro2021)/maps/mapjdida.yaml"/>
   
   <!-- Map Server -->
   <!-- Publish: /map, /map_metadata -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" />
 
 
-    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find stm_communication)/rviz/rviz_config_file.rviz" />
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find reel_euro2021)/rviz/rviz_config_file.rviz" />
     
     
 </launch>

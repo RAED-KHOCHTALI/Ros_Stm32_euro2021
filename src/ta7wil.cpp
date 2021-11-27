@@ -19,8 +19,8 @@ class Subscriber1publisher
    public: 
   Subscriber1publisher(){
       
-        odom_pub = n.advertise<nav_msgs::Odometry>("/odom", 10000000);
-        sub_ta7wil = n.subscribe("/ta7wil", 10000000, &Subscriber1publisher::ta7wil_odom_tf ,this);
+        odom_pub = n.advertise<nav_msgs::Odometry>("/odom", 1000);
+        sub_ta7wil = n.subscribe("/ta7wil", 1000, &Subscriber1publisher::ta7wil_odom_tf ,this);
   }
 
  

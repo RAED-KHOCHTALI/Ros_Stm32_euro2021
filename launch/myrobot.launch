@@ -1,0 +1,21 @@
+<launch>
+    <node name="serial_node"        pkg="rosserial_python"      type="serial_node.py">
+    <param name="port"              type="string"              command="cat '$(find reel_euro2021)/config/baud.txt'"  />
+    <param name="baud"              type="int"                  value="256000"/>
+    </node>
+    	<node pkg="reel_euro2021" type="ta7wil" name="ta7wil"/>
+    	<node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+      args="0 0 0 0 0 0 map odom 100"/>
+
+    <!-- Map File -->
+  <arg name="map_file" default="$(find reel_euro2021)/maps/mapjdida.yaml"/>
+  
+  <!-- Map Server -->
+  <!-- Publish: /map, /map_metadata -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" />
+
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find reel_euro2021)/rviz/rviz_config_file.rviz" />
+    
+    
+</launch>

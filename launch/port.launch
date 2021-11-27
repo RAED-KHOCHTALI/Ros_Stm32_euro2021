@@ -1,0 +1,8 @@
+<launch>
+
+<node pkg="reel_euro2021" type="find_port" name="find_port">
+    <param name="cmd" value="/bash_scripts/find_port"/>
+</node>
+
+
+</launch>

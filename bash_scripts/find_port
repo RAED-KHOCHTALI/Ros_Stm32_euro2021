@@ -1,0 +1,10 @@
+#!/bin/bash
+file=$(echo "$(rospack find reel_euro2021)/config/baud.txt"  )
+echo -n "/dev/"$(ls /dev | grep ttyACM | head -1)  > $file
+ 
+if [[ $(cat $file) == *"/dev/ttyACM"* ]]
+ then   echo -e "\e[1;41mSuccess You Port is VALID :) :) :) \e[1;m" > /dev/pts/0
+
+ else
+    echo -e "\e[1;41mINVALID PORT !!!!! :( :( :( \e[1;m" > /dev/pts/0
+  fi

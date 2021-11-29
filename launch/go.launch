@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     <!-- <include file="$(find sim_euro2021)/launch/spawn.launch" /> -->
-    <include file="$(find reel_euro2021)/launch/myrobot.launch" /> 
+    <include file="$(find reel_euro2021)/launch/port.launch" /> 
     <include file="$(find reel_euro2021)/launch/navi_robot_dwa.launch" />
 </launch>
 

@@ -1,7 +1,7 @@
 <launch>
     <node name="serial_node"        pkg="rosserial_python"      type="serial_node.py">
     <param name="port"              type="string"              command="cat '$(find reel_euro2021)/config/baud.txt'"  />
-    <param name="baud"              type="int"                  value="460800"/>
+    <param name="baud"              type="int"                  value="256000"/>
     </node>
     	<node pkg="reel_euro2021" type="ta7wil" name="ta7wil"/>
     	<node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
